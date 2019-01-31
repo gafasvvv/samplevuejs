@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js App</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app" v-cloak>
+        <!-- テキストのデータバインディング -->
+        <!-- <p>{{ message.value }}</p>
+        <p>{{ message.value.length }}</p>
+        <p>{{ list[2] }}</p>
+        <p>{{ list[num] }}</p> -->
+
+        <!-- DOMのtextContentプロパティにバインド -->
+        <!-- <div v-bind:text-content.prop="message"></div> -->
+        <!-- DOMのscrollプロパティにバインド -->
+        <!-- <div v-bind:scroll-top.prop="scroll"></div> -->
+        
+        <!-- countプロパティを表示する -->
+        <!-- <p>{{ count }}回クリック！！！</p> -->
+        <!-- ボタンをクリックするとincrementメソッドが呼び出される -->
+        <!-- <button v-on:click = "increment">クリック！！！</button> -->
+        
+        <!-- クラスとスタイルのデータバインディング -->
+        <!-- <p v-bind:class="{ child: isChild, 'is-active': isActive }">Text</p>
+        <p v-bind:style="{ color: textColor, backgroundColor: bgColor }">Text</p> -->
+        
+        <!-- オブジェクトデータを渡すこともできる -->
+        <!-- <p v-bind:class="classObject">text</p>
+        <p v-bind:style="styleObject">text</p> -->
+
+        <!-- 複数の属性のデータバインディング -->
+        <!-- <img v-bind="item"> -->
+
+        <!-- SVGのデータバインディング -->
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <circle cx="100" cy="75" v-bind:r="radius" fill="lightblue"/>
+        </svg>
+        <input type="range" min="0" max="100" v-model="radius"> -->
+
+        <!-- リストデータの表示と更新 -->
+        <!-- <ul>
+            <li v-for="(item, key, index) in list" v-bind:key="item.id">
+                ID:{{ item.id }} {{ item.name }} HP:{{ item.hp }}
+            </li>
+        </ul> -->
+
+        <!-- 繰り返し描画しながら、さまざまな条件を適用する -->
+        <!-- <ul>
+            <li v-for="item in list"
+                v-bind:key="item.id"
+                v-bind:class="{ tuyoi: item.hp > 300 }">
+                ID:{{ item.id }} {{ item.name }} HP:{{ item.hp }}
+                <span v-if="item.hp > 300">強敵だ！！！</span>
+            </li>
+        </ul> -->
+
+        <!-- このフォームの入力値を新しいモンスターの名前に使う -->
+        <!-- 名前 <input v-model="name">
+        <button v-on:click="doAdd">モンスターを追加</button>
+        <ul>
+            <li v-for="item in list" v-bind:key="item.id">
+                ID:{{ item.id }} {{ item.name }} HP:{{ item.hp }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(item, index) in list" v-bind:key="item.id">
+                ID:{{ item.id }} {{ item.name }} HP:{{ item.hp }}
+                削除ボタンをv-for内に作成
+                <button v-on:click="doRemove(index)">モンスターを削除</button>
+            </li>
+        </ul> -->
+
+        <!-- リスト要素プロパティの更新 -->
+        <!-- <ul>
+            <li v-for="(item, index) in list" v-bind:key="item.id" v-if="item.hp">
+                ID:{{ item.id }} {{ item.name }} HP: {{ item.hp}}
+                <span v-if="item.hp < 50">瀕死！！！</span>-->
+                <!-- ボタンはv-for内に設置 -->
+                <!-- <button v-on:click="doAttack(index)">攻撃！！！</button>
+            </li>
+        </ul> --> 
+
+        <!-- <ul>
+            <li v-for="(item, index) in list" v-bind:key="item.id">
+                ID:{{ item.id }} {{ item.name }} HP:{{ item.hp }}
+            </li>
+        </ul> -->
+
+        <!-- DOMを直接参照する$refsの使い方 -->
+        <!-- <p ref="hello">Hello</p> -->
+        <!-- p要素にhelloという名前がついた -->
+
+        <button v-on:click="handleClick">カウントアップ</button>
+        <button v-on:click="show=!show">表示・非表示</button>
+        <span ref="count" v-if="show">0</span>
+
+        <pre>{{ $data }}</pre>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
