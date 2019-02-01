@@ -1,1 +1,14 @@
 [v-cloak] { display: none; }
+
+img {
+    opacity: 1;
+    transition: opacity 1s;
+}
+img.hide {
+    opacity: 0;
+}
+
+#app {
+  height:10000px;
+  background: linear-gradient(#E4A972, #9941D8);
+}

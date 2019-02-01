@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js App</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- smooth-scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@12.1.5"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+
+        <!-- <button v-on:click="handleClick">クリック</button> -->
+        <!-- <input v-bind:value="message" v-on:input="handleInput"> -->
+
+         <!-- 右クリックでイベント発生 -->
+        <!-- <div v-on:click.right="handler">example</div> -->
+        <!-- <div v-on:click.right.prevent="handler">example</div> -->
+
+        <!-- 双方向データーバインディング -->
+        <!-- <input v-model="message">
+        <p>{{ message }}</p>
+        <textarea v-model="message"></textarea>
+        <pre>{{ message }}</pre> -->
+
+        <!-- 単一チェックボックス -->
+        <!-- <label>
+            <input type="checkbox" v-model="val" true-value="はい" false-value="いいえ">{{ val }}
+        </label> -->
+
+        <!-- 複数チェックボックス -->
+        <!-- <label><input type="checkbox" v-model="val" value="A">A</label>
+        <label><input type="checkbox" v-model="val" value="B">B</label>
+        <label><input type="checkbox" v-model="val" value="C">C</label>
+        <p>{{ val }}</p> -->
+
+        <!-- ラジオボタン -->
+        <!-- <label><input type="radio" value="a" v-model="val">A</label>
+        <label><input type="radio" value="b" v-model="val">B</label>
+        <label><input type="radio" value="c" v-model="val">C</label>
+        <p>{{ val }}</p> -->
+        
+        <!-- セレクトボックス（単一選択） -->
+        <!-- <select v-model="val">
+            <option disabled="disabled">選択してください</option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+        </select> -->
+
+        <!-- セレクトボックス（複数選択） -->
+        <!-- <select v-model="val" multiple>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+        </select>
+        <p>{{ val }}</p> -->
+
+        <!-- 画像ファイル -->
+        <!-- <input type="file" v-on:change="handleChange">
+        <div v-if="preview"><img v-bind:src="preview"></div> -->
+
+        <!-- その他の入力タイプ -->
+        <!-- <input type="range" v-model.number="val">{{ val }}
+        <br>
+        <input type="text" v-model.number="price">{{ price }} -->
+
+        <!-- スクロールイベントの実装 -->
+        <!-- <header v-bind:class="{ compact: scrollY > 200}">
+            200pxより下にスクロールしたら.compactを付与
+        </header> -->
+
+        <pre>{{ $data }}</pre>
+        
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="event.js"></script>
+</body>
+</html>

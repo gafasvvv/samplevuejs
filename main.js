@@ -189,22 +189,22 @@
 //     }
 // })
 
-//外部データ（JsonファイルやWebAPIなど）から取得する
-// var app = new Vue({
-//     el: '#app',
-//     data: {
-//         //あらかじめ空リストを用意しておく
-//         list: []
-//     },
-//     created: function(){
-//         axios.get('list.json').then(function(response){
-//             //取得完了したらlistに代入
-//             this.list = response.data
-//         }.bind(this)).catch(function(e){
-//             console.error(e)
-//         })
-//     }
-// })
+// 外部データ（JsonファイルやWebAPIなど）から取得する
+var app = new Vue({
+    el: '#app',
+    data: {
+        //あらかじめ空リストを用意しておく
+        list: []
+    },
+    created: function(){
+        axios.get('list.json').then(function(response){
+            //取得完了したらlistに代入
+            this.list = response.data
+        }.bind(this)).catch(function(e){
+            console.error(e)
+        })
+    }
+})
 
 //DOMを直接参照する$elの使い方
 // var app = new Vue({
