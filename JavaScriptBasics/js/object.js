@@ -242,13 +242,13 @@
     // showTime();
 
     //例外処理
-    const a = 5;
-    try{
-        console.log(a.toUpperCase());
-    } catch(e){
-        console.log(e.message);
-    }
-    console.log('Finish');
+    // const a = 5;
+    // try{
+    //     console.log(a.toUpperCase());
+    // } catch(e){
+    //     console.log(e.message);
+    // }
+    // console.log('Finish');
 
 
 }
