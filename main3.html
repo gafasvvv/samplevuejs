@@ -42,12 +42,23 @@
         <!-- ソート機能を追加しよう -->
         <!-- <button v-on:click="order=!order">切り替え</button> -->
 
-        <select v-model="current">
+        <!-- フォームを監視してAPIからデータを取得しよう -->
+        <!-- <select v-model="current">
             <option v-for="topic in topics" v-bind:value="topic.value">
                 {{ topic.name }}
             </option>
         </select>
-        <div v-for="item in list">{{ item.full_name }}</div>
+        <div v-for="item in list">{{ item.full_name }}</div> -->
+
+        <!-- {{ price | localeNum }} -->
+
+        <!-- 180度は{{ 180 | radian | round }}  ラジアンだよ -->
+
+        <button v-on:click="list.push(list.length+1)">追加</button>
+        <ul ref="list">
+            <li v-for="item in list">{{ item }}</li>
+        </ul>
+
 
         <pre>{{ $data }}</pre>
         

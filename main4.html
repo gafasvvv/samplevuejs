@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js App</title>
+    <link rel="stylesheet" href="#">
+    <!-- smooth-scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@12.1.5"></script>
+</head>
+<body>
+    <div id="app" v-cloak>
+
+        <!-- <my-component></my-component> -->
+
+        <!-- <comp-child :val="valueA"></comp-child>
+        <comp-child :val="valueB"></comp-child> -->
+
+        <!-- 親コンポーネント -->
+        <!-- <ul>
+            <comp-child v-for="item in list"
+                v-bind:key="item.id"
+                v-bind="item"
+                v-on:attack="handleAttack"></comp-child>
+        </ul> -->
+
+        <!-- <comp-child v-on:childs-event="parentsMethod"></comp-child> -->
+
+        <!-- <my-component
+        v-bind:name.sync="name"
+        v-bind:hp.sync="hp"></my-component> -->
+
+        <!-- <button v-on:click="current^=1">toggle</button>
+        <div v-bind:is="component"></div> -->
+
+        <!-- <button v-on:click="current='comp-board'">メッセージ一覧</button>
+        <button v-on:click="current='comp-form'">投稿フォーム</button>
+        <keep-alive>
+            <div v-bind:is="current"></div>
+        </keep-alive> -->
+
+        <pre>{{ $data }}</pre>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="js/main4.js"></script>
+</body>
+</html>

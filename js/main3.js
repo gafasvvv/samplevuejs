@@ -99,24 +99,100 @@
 // })
 
 //フォームを監視してAPIからデータを取得しよう
-var app = new Vue({
-    el: '#app',
-    data: {
-        list: [],
-        current: '',
-        topics: [
-            { value: 'vue', name: 'Vue.js'},
-            { value: 'jQuery', name:'jQuery'},
-            { value: 'Laravel', name:'Laravel'}
-        ]
-    },
-    watch: {
-        current: function(val){
-            axios.get('https://api.github.com/search/repositories',{
-                params: { q: 'topic:' + val }
-            }).then(function(response){
-                this.list = response.data.items
-            }.bind(this))
+// var app = new Vue({
+//     el: '#app',
+//     data: {
+//         list: [],
+//         current: '',
+//         topics: [
+//             { value: 'vue', name: 'Vue.js'},
+//             { value: 'jQuery', name:'jQuery'},
+//             { value: 'Laravel', name:'Laravel'}
+//         ]
+//     },
+//     watch: {
+//         current: function(val){
+//             axios.get('https://api.github.com/search/repositories',{
+//                 params: { q: 'topic:' + val }
+//             }).then(function(response){
+//                 this.list = response.data.items
+//             }.bind(this))
+//         }
+//     }
+// })
+
+//フィルタの使い方
+// var app = new Vue({
+//         el: '#app',
+//         data: {
+//             price: 19800
+//         },
+//         filters: {
+//             localeNum: function(val) {
+//                 return val.toLocaleString()
+//             }
+//         }
+//     })
+
+//複数フィルタの使い方
+// var app = new Vue({
+//         el: '#app',
+//         filters: {
+//             //小数点以下を第二位に丸めるフィルタ
+//             round: function(val){
+//                 return Math.round(val * 100) / 100;
+//             },
+//             //度からラジアンに変換するフィルタ
+//             radian: function(val){
+//                 return val * Math.PI / 180;
+//             }
+//         }
+//     })
+
+//カスタムディレクティブの使い方
+// var app = new Vue({
+//         el: '#app',
+//         directives: {
+//             focus: {
+//             //紐ついてる要素がDOMに挿入されるとき
+//                 inserted: function(el){
+//                     el.focus()// 要素にフォーカスを当てる
+//                 }
+//             }
+//         }
+//     })
+    //使用可能なフック
+    // Vue.directive('example', {
+    //     bind: function (el, binding) {
+    //       console.log('v-example bind')
+    //     },
+    //     inserted: function (el, binding) {
+    //       console.log('v-example inserted')
+    //     },
+    //     update: function (el, binding) {
+    //       console.log('v-example update')
+    //     },
+    //     componentUpdated: function (el, binding) {
+    //       console.log('v-example componentUpdated')
+    //     },
+    //     unbind: function (el, binding) {
+    //       console.log('v-example unbind')
+    //     }
+    //   })
+
+    new Vue({
+        el: '#app',
+        data: {
+          list: []
+        },
+        watch: {
+          list: function () {
+            // 更新後のul要素の高さを取得できない…
+            console.log('通常:', this.$refs.list.offsetHeight)
+            // nextTickを使えばできる！
+            this.$nextTick(function () {
+              console.log('nextTick:', this.$refs.list.offsetHeight)
+            })
+          }
         }
-    }
-})
+      })
