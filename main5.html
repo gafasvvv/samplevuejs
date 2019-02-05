@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>Vue.js App</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- smooth-scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@12.1.5"></script>
+</head>
+<body>
+    <div id="app">
+
+        <button v-on:click="show=!show">切り替え</button>
+        <transition>
+            <div v-show="show">こんにちわ！</div>
+        </transition>
+
+        <pre>{{ $data }}</pre>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.17.1/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+    <script src="js/main5.js"></script>
+</body>
+</html>

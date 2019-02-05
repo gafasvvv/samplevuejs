@@ -1,4 +1,4 @@
-[v-cloak] { display: none; }
+/* [v-cloak] { display: none; }
 
 img {
     opacity: 1;
@@ -11,4 +11,14 @@ img.hide {
 #app {
   height:10000px;
   background: linear-gradient(#E4A972, #9941D8);
+} */
+
+/* トランジション */
+/* １秒かけて透明度を遷移 */
+.v-enter-ActiveXObject, .v-leave-active {
+  transition: opacity 1s;
+}
+/* 見えなくなる時の透明度 */
+.v-enter, .v-leave-to {
+  opacity: 0;
 }
