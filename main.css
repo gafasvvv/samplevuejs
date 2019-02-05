@@ -15,10 +15,100 @@ img.hide {
 
 /* トランジション */
 /* １秒かけて透明度を遷移 */
-.v-enter-ActiveXObject, .v-leave-active {
+/* .v-enter-acrive, .v-leave-active {
+  transition: opacity 1s;
+} */
+/* 見えなくなる時の透明度 */
+/* .v-enter, .v-leave-to {
+  opacity: 0;
+} */
+
+/* .demo-enter-active, .demo-leave-active {
   transition: opacity 1s;
 }
-/* 見えなくなる時の透明度 */
+.demo-enter, .demo-leave-to {
+  opacity: 0;
+}  */
+
+/* .v-enter-active, .v-leave-active {
+  transition: opacity 1s, transform 1s;
+} */
+/* 表示するときは左から */
+/* .v-enter {
+  opacity: 0;
+  transform: translateX(-10px);
+}  */
+/* 消えるときは下から */
+/* .v-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}  */
+
+/* 複数の要素をグループ化する  いい感じにするabsolute*/
+/* .v-enter-active, .v-leave-active {
+  transition: opacity 1s;
+}
+.v-leave-active {
+  position: absolute;
+}
 .v-enter, .v-leave-to {
   opacity: 0;
+} */
+
+/* キーの変化によるトランジションの発動 */
+/* .v-enter-active {
+  transition: opacity 1s;
+} */
+/* 微妙に時間をずらして文字色の濃度を調整している */
+/* .v-leave-active {
+  transition: opacity 0.8s ease 0.2s;
+  position: absolute;
+}
+.v-enter, .v-leave-to {
+  opacity: 0;
+} */
+
+/* 移動トランジション */
+/* .v-move {
+  transition: transform 1s;
+} */
+
+/* 移動トランジション X＆Y座標 */
+/* 以下はボックス要素のスタイル */
+/* .list {
+  width: 240px;
+  padding: 0;
+}
+.item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  width: 40px;
+  height: 40px;
+  background: #f5f5f5;
+}
+/* トランジション用スタイル */
+/* .v-enter-active, .v-leave-active, .v-move {
+  transition: all 1s;
+}
+.v-leave-active {
+  position: absolute;
+}
+.v-enter, .v-leave-to {
+  opacity: 0;
+  background: #f9a3b1;
+  transform: translateY(-30px);
+} */
+
+/* SVGのトランジション */
+.v-enter-active, .v-leave-active {
+  transition: all 1s;
+}
+.v-leave-active {
+  position: absolute;
+}
+.v-enter, .v-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
 }

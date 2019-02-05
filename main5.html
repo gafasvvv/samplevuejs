@@ -10,10 +10,63 @@
 <body>
     <div id="app">
 
-        <button v-on:click="show=!show">切り替え</button>
-        <transition>
-            <div v-show="show">こんにちわ！</div>
-        </transition>
+        <!-- <button v-on:click="show=!show">切り替え</button> -->
+        <!-- class名なし＝v- -->
+        <!-- <transition>
+            <div v-show="show"><img src="cat.png" ></div>
+        </transition> -->
+        <!-- class名あり　かつ　v-if かつapear-->
+        <!-- <transition appear name="demo">
+            <div v-if="show"><img src="cat.png" ></div>
+        </transition> -->
+
+        <!-- <transition>
+            <div v-show="show"><img src="cat.png" ></div>
+        </transition> -->
+
+        <!-- 複数の要素をグループ化する -->
+        <!-- <p><button v-on:click="show=!show"> 切り替え</button></p>
+        <transition mode="out-in">
+            <div v-if="show" key="a">True</div>
+            <div v-else key="b">False</div>
+        </transition> -->
+
+        <!-- キーの変化によるトランジションの発動 -->
+        <!-- <button v-on:click="count++"> 切り替え</button>
+        <transition mode="out-in">
+            <div v-bind:key="count">{{ count }}</div>
+        </transition> -->
+
+        <!-- 移動トランジション -->
+        <!-- <button v-on:click="order=!order"> 切り替え</button> -->
+        <!-- transition-groupタグに指定した属性はラップ要素に付与される -->
+        <!-- <transition-group tag="ul" class="list">
+            <li v-for="item in sortedList" v-bind:key="item.id">
+                {{ item.name }} {{ item.price }}円
+            </li>
+        </transition-group> -->
+
+        <!-- 移動トランジション X＆Y座標 -->
+        <!-- <p>
+            <button v-on:click="doShuffle">シャッフル</button>
+            <button v-on:click="doAdd">追加</button>
+        </p>
+        <transition-group tag="ul" class="list">
+            <li v-for="(item, index) in list"
+              v-bind:key="item"
+              class="item"
+              v-on:click="doRemove(index)">{{ item }}
+            </li>
+        </transition-group> -->
+
+        <!-- SVGのトランジション -->
+        <button v-on:click="toggle=!toggle">切り替え</button>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <!-- SVGのパーツにトランジションを適用 -->
+            <transition>
+            <my-circle v-bind:fill="fill" v-bind:key="fill"></my-circle>
+            </transition>
+        </svg>
 
         <pre>{{ $data }}</pre>
         
